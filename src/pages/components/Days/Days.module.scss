@@ -1,0 +1,80 @@
+@import "./src/styles/variables";
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  color: var(#{--text-color-default});
+
+  .wrapper {
+    display: flex;
+    .items {
+      margin-right: 15px;
+    }
+  }
+  .item,
+  .cancel {
+    max-height: 35px;
+    font-size: 18px;
+    color: $light-color;
+    padding: 10px 20px;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    background-color: var(#{--components-background-default});
+    margin-right: 15px;
+  }
+  .cancel {
+    margin-right: 0;
+    color: var(#{--text-color-default});
+  }
+  .item {
+    &.active {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+.card_day {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  border-radius: 0 0 $border-radius $border-radius;
+  background-color: var(#{--components-background-default});
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  width: 149px;
+  height: 200px;
+  background-color: var(#{--card-background-default});
+  padding: 10px;
+  transition: 0.3ms;
+  cursor: pointer;
+  .day_card,
+  .temp_day {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(#{--text-color-default});
+  }
+  .day_info,
+  .temp_night,
+  .info {
+    font-size: 13px;
+    color: $base-color;
+    margin-bottom: 5px;
+  }
+
+  &:hover {
+    box-shadow: var(#{--card-shadow-default});
+  }
+}
