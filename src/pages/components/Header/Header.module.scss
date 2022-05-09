@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    margin-left: 20px;
+    color: $primary-color;
+  }
+  .change_theme {
+    margin-right: 20px;
+  }
+}
