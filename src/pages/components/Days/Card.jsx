@@ -7,9 +7,10 @@ export const Card = (props) => {
 
   return (
     <div className={s.card}>
-      <div className={s.day_card}>{day_card}</div>s
+      <div className={s.day_card}>{day_card}</div>
       <div className={s.day_info}>{day_info}</div>
       <div className={s.icon_id}>
+        <img src={icon_id} alt="" />
         <WeatherSvgSelector id={icon_id} />
       </div>
       <div className={s.temp_day}>{temp_day}</div>

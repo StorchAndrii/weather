@@ -4,9 +4,11 @@ import Select from "react-select";
 
 const Header = () => {
   const options = [
-    { value: "city-1", label: "Kyiv" },
-    { value: "city-2", label: "Odessa" },
-    { value: "city-3", label: "Lviv" },
+    { value: "city-1", label: "Киев" },
+    { value: "city-2", label: "Одесса" },
+    { value: "city-3", label: "Львов" },
+    { value: "city-3", label: "Кривой Рог" },
+    { value: "city-3", label: "Днепр" },
   ];
   const colourStyles = {
     control: (styles: any) => ({
@@ -29,6 +31,7 @@ const Header = () => {
   function onChangeCity(city) {
     console.log(city);
   }
+
   return (
     <div className={s.header}>
       <div className={s.wrapper}>
