@@ -11,9 +11,11 @@ const Header = () => {
     { value: "city-3", label: "Днепр" },
   ];
   const colourStyles = {
+    // осталось от тайп скрипта)
     control: (styles: any) => ({
       ...styles,
       backgroundColor:
+        // это шо вообще такое? О.о
         "#4f4f4f" === "rgba(71, 147, 255, 0.2)"
           ? "#4f4f4f"
           : "rgba(71, 147, 255, 0.2)",
@@ -22,8 +24,10 @@ const Header = () => {
       borderRadius: "10px",
       zIndex: 100,
     }),
+    // осталось от тайп скрипта)
     singleValue: (styles: any) => ({
       ...styles,
+      // и это шо ты такое придумал?
       color: "#fff" === "#000" ? "#fff" : "#000",
     }),
   };

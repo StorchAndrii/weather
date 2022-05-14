@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Days.module.scss";
 import { Card } from "./Card";
 import { Tabs } from "./Tabs";
+// есть хорошее правило, чтобы библиотеки импортирывались выше чем файлы проекта.
 import { useSelector } from "react-redux";
 
 export const Days = () => {
@@ -9,8 +10,10 @@ export const Days = () => {
   const day = weather.forecast.forecastday;
   const days = day.map((day) => ({
     day_card: `${day.date} `,
+    // а зачем два поля с одинаковой информацией?
     day_info: `${day.date} `,
     icon_id: `${day.day.condition.icon}`,
+    // Math.floor не нужно заворачивать в ``
     temp_day: Math.floor(`${day.day.maxtemp_c}`),
     temp_night: Math.floor(`${day.day.mintemp_c}`),
     info: `${day.day.condition.text}`,

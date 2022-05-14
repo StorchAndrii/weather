@@ -1,3 +1,4 @@
+// Другие такие же элементы почему-то просто js, а этот jsx
 export const WeatherSvgSelector = ({ id }) => {
   switch (id) {
     case "mainly_cloudy":

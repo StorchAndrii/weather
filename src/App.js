@@ -4,6 +4,7 @@ import Header from "./pages/components/Header/Header";
 
 function App() {
   return (
+    // лишний div
     <div>
       <div className="container">
         <Header />

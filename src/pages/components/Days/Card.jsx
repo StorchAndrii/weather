@@ -3,6 +3,7 @@ import s from "./Days.module.scss";
 import { WeatherSvgSelector } from "../../../assets/icon/weather/WeatherSvgSelector";
 
 export const Card = (props) => {
+  // не круто передавать классы через props. Ну и я не люблю не camelCase, если это не данные из сервера
   const { day_card, day_info, icon_id, temp_day, temp_night, info } = props.day;
 
   return (

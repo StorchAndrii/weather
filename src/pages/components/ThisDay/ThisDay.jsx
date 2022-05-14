@@ -22,6 +22,7 @@ const ThisDay = () => {
         </div>
         <div className={s.bottom_block}>
           <div className={s.this_time}>
+            {/* Есть такая библиотека day-js, чтобы форматировать время. Афигенно придумал, но, по правильному, лучше использовать ее*/}
             Время: {weather.location.localtime.substring(11, 16)}
           </div>
           <div className={s.this_city}>Город: {weather.location.name}</div>

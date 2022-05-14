@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Days.module.scss";
 
 export const Tabs = () => {
+  // Осталось от тайп скрипта)))
   const tabs: TabsItem[] = [
     {
       value: "На неделю",
