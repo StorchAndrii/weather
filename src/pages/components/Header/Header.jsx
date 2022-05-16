@@ -1,8 +1,14 @@
 import s from "./Header.module.scss";
 import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
 import Select from "react-select";
+import { useDispatch, useSelector } from "react-redux";
+import { getWeather } from "../../../weatherSlice/weatherSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const city = useSelector((state) => state.weatherSlice.city);
+  // const city = useSelector((state) => state.weatherSlice.city);
+  console.log(city);
   const options = [
     { value: "city-1", label: "Киев" },
     { value: "city-2", label: "Одесса" },
@@ -10,6 +16,8 @@ const Header = () => {
     { value: "city-3", label: "Кривой Рог" },
     { value: "city-3", label: "Днепр" },
   ];
+  console.log(options.find((option) => option.label === city));
+
   const colourStyles = {
     // осталось от тайп скрипта)
     control: (styles: any) => ({
@@ -32,10 +40,6 @@ const Header = () => {
     }),
   };
 
-  function onChangeCity(city) {
-    console.log(city);
-  }
-
   return (
     <div className={s.header}>
       <div className={s.wrapper}>
@@ -49,10 +53,12 @@ const Header = () => {
           <GlobalSvgSelector id={"change_theme"} />
         </div>
         <Select
-          defaultValue={options[0]}
+          value={options.find((option) => option.label === city)}
           styles={colourStyles}
           options={options}
-          onChange={onChangeCity}
+          onChange={(e) => {
+            dispatch(getWeather(e.label));
+          }}
         />
       </div>
     </div>

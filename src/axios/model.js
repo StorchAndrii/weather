@@ -1,5 +1,3 @@
-// лично я не выношу это в отдельные файлы а просто делаю константу initialValue прямо в слайсе
-
 export const weather = {
   location: {
     name: "",

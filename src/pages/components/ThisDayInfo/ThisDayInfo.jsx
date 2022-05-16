@@ -1,8 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import s from "./ThisDayInfo.module.scss";
 import ThisDayItem from "./ThisDayItem";
 import cloud from "../../../assets/images/cloud.png";
-import { useSelector } from "react-redux";
 
 const ThisDayInfo = () => {
   const weather = useSelector((state) => state.weatherSlice.weather);

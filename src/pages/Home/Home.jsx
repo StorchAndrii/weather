@@ -9,8 +9,8 @@ import { getWeather } from "../../weatherSlice/weatherSlice";
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getWeather());
-  }, []);
+    dispatch(getWeather("Киев"));
+  }, [dispatch]);
 
   return (
     <>
