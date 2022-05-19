@@ -1,4 +1,5 @@
 import React from "react";
+
 import s from "./ThisDayInfo.module.scss";
 import { IndicatorSvgSelector } from "../../../assets/icon/IndicatorSvgSelector/IndicatorSvgSelector";
 

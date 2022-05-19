@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 
 import s from "./ThisDayInfo.module.scss";
 import ThisDayItem from "./ThisDayItem";
-import cloud from "../../../assets/images/cloud.png";
+import { WeatherImageSelector } from "../../../assets/images/WeatherImageSelector";
 
 const ThisDayInfo = () => {
   const weather = useSelector((state) => state.weatherSlice.weather);
 
+  const id = weather.current.condition.text;
+  const weatherImage = WeatherImageSelector({ id });
   const items = [
     {
       icon_id: "temp",
@@ -34,7 +36,7 @@ const ThisDayInfo = () => {
   ];
   return (
     <div className={s.this_day_info}>
-      <img className={s.cloud_img} src={cloud} alt="cloud" />
+      <img className={s.cloud_img} src={weatherImage} alt="cloud" />
       <div>
         {items.map((item) => (
           <ThisDayItem key={item.icon_id} item={item} />

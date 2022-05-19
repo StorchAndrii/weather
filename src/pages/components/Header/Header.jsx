@@ -1,44 +1,44 @@
+import { useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
+
 import s from "./Header.module.scss";
 import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
-import Select from "react-select";
-import { useDispatch, useSelector } from "react-redux";
 import { getWeather } from "../../../weatherSlice/weatherSlice";
+import { useTheme } from "../../../hooks/useTheme";
+import { Theme } from "../../../ThemeContext/ThemeContext";
 
 const Header = () => {
+  const theme = useTheme();
+
   const dispatch = useDispatch();
   const city = useSelector((state) => state.weatherSlice.city);
   // const city = useSelector((state) => state.weatherSlice.city);
-  console.log(city);
   const options = [
     { value: "city-1", label: "Киев" },
     { value: "city-2", label: "Одесса" },
     { value: "city-3", label: "Львов" },
     { value: "city-3", label: "Кривой Рог" },
-    { value: "city-3", label: "Днепр" },
+    { value: "city-3", label: "Днепропетровск" },
   ];
-  console.log(options.find((option) => option.label === city));
 
   const colourStyles = {
-    // осталось от тайп скрипта)
-    control: (styles: any) => ({
+    control: (styles) => ({
       ...styles,
       backgroundColor:
-        // это шо вообще такое? О.о
-        "#4f4f4f" === "rgba(71, 147, 255, 0.2)"
-          ? "#4f4f4f"
-          : "rgba(71, 147, 255, 0.2)",
+        theme.theme === Theme.Dark ? "#4f4f4f" : "rgba(71, 147, 255, 0.2)",
       width: "194px",
       height: "37px",
       borderRadius: "10px",
       zIndex: 100,
     }),
-    // осталось от тайп скрипта)
-    singleValue: (styles: any) => ({
+    singleValue: (styles) => ({
       ...styles,
-      // и это шо ты такое придумал?
-      color: "#fff" === "#000" ? "#fff" : "#000",
+      color: theme.theme === Theme.Dark ? "#fff" : "#000",
     }),
   };
+  function changeTheme() {
+    theme.changeTheme(theme.theme === Theme.Light ? Theme.Dark : Theme.Light);
+  }
 
   return (
     <div className={s.header}>
@@ -49,7 +49,7 @@ const Header = () => {
         <h1 className={s.title}>React weather</h1>
       </div>
       <div className={s.wrapper}>
-        <div className={s.change_theme}>
+        <div className={s.change_theme} onClick={changeTheme}>
           <GlobalSvgSelector id={"change_theme"} />
         </div>
         <Select

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import baseService from "../axios/baseService";
-import { weather } from "../axios/model";
+import { weather } from "../model/model";
 
 const initialState = {
   weather,
