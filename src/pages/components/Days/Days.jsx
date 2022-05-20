@@ -11,6 +11,7 @@ export const Days = () => {
   const weather = useSelector((state) => state.weatherSlice.weather);
   const day = weather.forecast.forecastday;
   const days = day.map((day) => ({
+    dayId: day.date,
     dayCard: dayjs(day.date).locale("ru").format("D  MMM"),
     iconId: day.day.condition.icon,
     tempDay: Math.floor(day.day.maxtemp_c),
@@ -23,7 +24,7 @@ export const Days = () => {
       <Tabs />
       <div className={s.card_day}>
         {days.map((day) => (
-          <Card key={day.dayCard} day={day} />
+          <Card key={day.dayCard} day={day} dayData={day.date} />
         ))}
       </div>
     </>

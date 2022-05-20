@@ -12,13 +12,13 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const city = useSelector((state) => state.weatherSlice.city);
-  // const city = useSelector((state) => state.weatherSlice.city);
+
   const options = [
     { value: "city-1", label: "Киев" },
     { value: "city-2", label: "Одесса" },
     { value: "city-3", label: "Львов" },
-    { value: "city-3", label: "Кривой Рог" },
-    { value: "city-3", label: "Днепропетровск" },
+    { value: "city-4", label: "Кривой Рог" },
+    { value: "city-5", label: "Днепропетровск" },
   ];
 
   const colourStyles = {

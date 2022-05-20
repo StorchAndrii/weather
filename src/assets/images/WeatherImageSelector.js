@@ -8,6 +8,8 @@ export const WeatherImageSelector = ({ id }) => {
       return sun;
     case "Переменная облачность":
       return cloud;
+    case "Пасмурно":
+      return cloud;
     case "Местами дождь":
       return rain;
 

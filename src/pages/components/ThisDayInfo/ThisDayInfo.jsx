@@ -12,24 +12,24 @@ const ThisDayInfo = () => {
   const weatherImage = WeatherImageSelector({ id });
   const items = [
     {
-      icon_id: "temp",
+      iconId: "temp",
       name: "Температура",
       value: `${Math.floor(
         weather.current.temp_c
       )}° - ощущается как ${Math.floor(weather.current.feelslike_c)}°`,
     },
     {
-      icon_id: "pressure",
+      iconId: "pressure",
       name: "Давление",
       value: `${weather.current.pressure_mb} мм ртутного столба`,
     },
     {
-      icon_id: "precipitation",
+      iconId: "precipitation",
       name: "Осадки",
       value: `${weather.current.condition.text}`,
     },
     {
-      icon_id: "wind",
+      iconId: "wind",
       name: "Ветер",
       value: `${weather.current.wind_kph} км/ч ${weather.current.wind_dir}`,
     },
@@ -39,7 +39,7 @@ const ThisDayInfo = () => {
       <img className={s.cloud_img} src={weatherImage} alt="cloud" />
       <div>
         {items.map((item) => (
-          <ThisDayItem key={item.icon_id} item={item} />
+          <ThisDayItem key={item.iconId} item={item} />
         ))}
       </div>
     </div>

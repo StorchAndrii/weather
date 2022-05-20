@@ -1,11 +1,15 @@
 import React from "react";
 import Home from "./pages/Home/Home";
 import Header from "./pages/components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+import Popup from "./pages/components/Popup/Popup";
 
 function App() {
   return (
-    // лишний div
     <div>
+      <Routes>
+        <Route path="/info/:dayCard" element={<Popup />} />
+      </Routes>
       <div className="container">
         <Header />
         <Home />
