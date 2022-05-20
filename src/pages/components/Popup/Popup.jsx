@@ -1,11 +1,11 @@
 import React from "react";
 import dayjs from "dayjs";
+import { NavLink, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import s from "./Popup.module.scss";
 import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
 import ThisDayItem from "../ThisDayInfo/ThisDayItem";
-import { NavLink, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const Popup = () => {
   const { dayCard } = useParams();
