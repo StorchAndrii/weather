@@ -12,6 +12,8 @@ export const WeatherImageSelector = ({ id }) => {
       return cloud;
     case "Местами дождь":
       return rain;
+    case "Небольшой ливневый дождь":
+      return rain;
 
     default:
       return null;

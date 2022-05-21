@@ -6,6 +6,6 @@ export const Theme = {
 };
 
 export const ThemeContext = createContext({
-  Theme: Theme.Light, // значение по умолчанию
+  Theme: Theme.Light,
   changeTheme: () => {},
 });

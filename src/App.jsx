@@ -1,7 +1,8 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home/Home";
 import Header from "./pages/components/Header/Header";
-import { Route, Routes } from "react-router-dom";
 import Popup from "./pages/components/Popup/Popup";
 
 function App() {

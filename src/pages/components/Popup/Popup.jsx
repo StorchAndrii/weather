@@ -5,17 +5,13 @@ import { useSelector } from "react-redux";
 
 import s from "./Popup.module.scss";
 import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
-import ThisDayItem from "../ThisDayInfo/ThisDayItem";
+import ThisDayItem from "../ThisDayItem/ThisDayItem";
 
 const Popup = () => {
   const { dayCard } = useParams();
-  console.log(dayCard);
   const weather = useSelector((state) => state.weatherSlice.weather);
   const dayArray = weather.forecast.forecastday;
   const dayInfo = dayArray.find((dayInfo) => dayInfo.date === dayCard);
-  // likeUser.find((nameUserInfo) => nameUserInfo.name.first === userName)
-  const pressure = dayInfo.hour[0].pressure_mb;
-  console.log(pressure);
 
   const items = [
     {

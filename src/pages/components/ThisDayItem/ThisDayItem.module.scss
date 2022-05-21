@@ -1,0 +1,39 @@
+@import "src/styles/variables";
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  §:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .indicator,
+  .indicator_name {
+    margin-right: 20px;
+  }
+
+  .indicator {
+    height: 38px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    border-radius: 50%;
+  }
+
+  .indicator_name,
+  .indicator_value {
+    font-size: 14px;
+  }
+  .indicator_name {
+    color: $base-color;
+  }
+  .indicator_value {
+    color: var(#{--text-color-default});
+  }
+}

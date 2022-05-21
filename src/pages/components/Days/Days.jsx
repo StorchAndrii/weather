@@ -2,10 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import "dayjs/locale/ru";
+import { NavLink } from "react-router-dom";
 
 import s from "./Days.module.scss";
-import { Card } from "./Card";
-import { Tabs } from "./Tabs";
 
 export const Days = () => {
   const weather = useSelector((state) => state.weatherSlice.weather);
@@ -21,10 +20,20 @@ export const Days = () => {
 
   return (
     <>
-      <Tabs />
+      {/*<Tabs />*/}
       <div className={s.card_day}>
         {days.map((day) => (
-          <Card key={day.dayCard} day={day} dayData={day.date} />
+          <NavLink to={`/Info/${day.dayId}`} key={day.dayId}>
+            <div className={s.card}>
+              <div className={s.day_card}>{day.dayCard}</div>
+              <div className={s.icon_id}>
+                <img src={day.iconId} alt="" />
+              </div>
+              <div className={s.temp_day}>{day.tempDay}</div>
+              <div className={s.temp_night}>{day.tempNight}</div>
+              <div className={s.info}>{day.info}</div>
+            </div>
+          </NavLink>
         ))}
       </div>
     </>

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import s from "./ThisDayInfo.module.scss";
-import ThisDayItem from "./ThisDayItem";
+import ThisDayItem from "../ThisDayItem/ThisDayItem";
 import { WeatherImageSelector } from "../../../assets/images/WeatherImageSelector";
 
 const ThisDayInfo = () => {

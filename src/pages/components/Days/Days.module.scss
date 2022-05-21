@@ -1,43 +1,43 @@
 @import "./src/styles/variables";
 
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  margin-bottom: 25px;
-  cursor: pointer;
-  color: var(#{--text-color-default});
-
-  .wrapper {
-    display: flex;
-    .items {
-      margin-right: 15px;
-    }
-  }
-  .item,
-  .cancel {
-    max-height: 35px;
-    font-size: 18px;
-    color: $light-color;
-    padding: 10px 20px;
-    box-shadow: $box-shadow;
-    border-radius: 5px;
-    background-color: var(#{--components-background-default});
-    margin-right: 15px;
-  }
-  .cancel {
-    margin-right: 0;
-    color: var(#{--text-color-default});
-  }
-  .item {
-    &.active {
-      background-color: $primary-color;
-      color: #fff;
-    }
-  }
-}
+//.tabs {
+//  display: flex;
+//  justify-content: space-between;
+//  font-weight: 400;
+//  font-size: 18px;
+//  line-height: 22px;
+//  margin-bottom: 25px;
+//  cursor: pointer;
+//  color: var(#{--text-color-default});
+//
+//  .wrapper {
+//    display: flex;
+//    .items {
+//      margin-right: 15px;
+//    }
+//  }
+//  .item,
+//  .cancel {
+//    max-height: 35px;
+//    font-size: 18px;
+//    color: $light-color;
+//    padding: 10px 20px;
+//    box-shadow: $box-shadow;
+//    border-radius: 5px;
+//    background-color: var(#{--components-background-default});
+//    margin-right: 15px;
+//  }
+//  .cancel {
+//    margin-right: 0;
+//    color: var(#{--text-color-default});
+//  }
+//  .item {
+//    &.active {
+//      background-color: $primary-color;
+//      color: #fff;
+//    }
+//  }
+//}
 
 .card_day {
   display: flex;

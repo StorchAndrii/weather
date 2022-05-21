@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import baseService from "../axios/baseService";
 import { weather } from "../model/model";
 

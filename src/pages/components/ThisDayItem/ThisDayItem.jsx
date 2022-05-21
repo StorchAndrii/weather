@@ -1,6 +1,6 @@
 import React from "react";
 
-import s from "./ThisDayInfo.module.scss";
+import s from "../ThisDayItem/ThisDayItem.module.scss";
 import { IndicatorSvgSelector } from "../../../assets/icon/IndicatorSvgSelector/IndicatorSvgSelector";
 
 const ThisDayItem = (props) => {
