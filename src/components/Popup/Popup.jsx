@@ -4,7 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import s from "./Popup.module.scss";
-import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
+import { GlobalSvgSelector } from "../../assets/icon/globalSvg/GlobalSvgSelector";
 import ThisDayItem from "../ThisDayItem/ThisDayItem";
 
 const Popup = () => {
@@ -40,7 +40,7 @@ const Popup = () => {
 
   return (
     <>
-      <div className={s.blur}></div>
+      <div className={s.blur} />
       <div className={s.popup}>
         <div className={s.day}>
           <div className={s.day_temp}>{Math.floor(dayInfo.day.maxtemp_c)}°</div>
@@ -49,7 +49,6 @@ const Popup = () => {
           </div>
           <div className={s.img}>
             <img src={dayInfo.day.condition.icon} alt="weather" />
-            {/*<GlobalSvgSelector id="sun" />*/}
           </div>
           <div className={s.day_time}>
             Время:

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import s from "./Home.module.scss";
-import ThisDay from "../components/ThisDay/ThisDay";
-import ThisDayInfo from "../components/ThisDayInfo/ThisDayInfo";
-import { Days } from "../components/Days/Days";
 import { useDispatch } from "react-redux";
+
+import s from "./Home.module.scss";
+import ThisDay from "../../components/ThisDay/ThisDay";
+import ThisDayInfo from "../../components/ThisDayInfo/ThisDayInfo";
+import { Days } from "../../components/Days/Days";
 import { getWeather } from "../../weatherSlice/weatherSlice";
 
 const Home = () => {

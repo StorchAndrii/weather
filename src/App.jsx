@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
-import Header from "./pages/components/Header/Header";
-import Popup from "./pages/components/Popup/Popup";
+import Header from "./components/Header/Header";
+import Popup from "./components/Popup/Popup";
 
 function App() {
   return (

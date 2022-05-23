@@ -1,5 +1,14 @@
-@import "src/styles/variables";
+@import "../../styles/variables";
 
+.this_day_info {
+  position: relative;
+  max-width: 750px;
+  width: 100%;
+  padding: 40px;
+  background: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
 .item {
   position: relative;
   display: flex;
@@ -36,4 +45,12 @@
   .indicator_value {
     color: var(#{--text-color-default});
   }
+}
+
+.cloud_img {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  top: 0;
+  right: 0;
 }

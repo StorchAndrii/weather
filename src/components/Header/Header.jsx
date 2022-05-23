@@ -2,10 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
 import s from "./Header.module.scss";
-import { GlobalSvgSelector } from "../../../assets/icon/globalSvg/GlobalSvgSelector";
-import { getWeather } from "../../../weatherSlice/weatherSlice";
-import { useTheme } from "../../../hooks/useTheme";
-import { Theme } from "../../../ThemeContext/ThemeContext";
+import { GlobalSvgSelector } from "../../assets/icon/globalSvg/GlobalSvgSelector";
+import { getWeather } from "../../weatherSlice/weatherSlice";
+import { useTheme } from "../../hooks/useTheme";
+import { Theme } from "../../provider/ThemeProvider";
 
 const Header = () => {
   const theme = useTheme();
