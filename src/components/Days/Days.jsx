@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import dayjs from "dayjs";
 import "dayjs/locale/ru";
-import { NavLink } from "react-router-dom";
+import dayjs from "dayjs";
 
 import s from "./Days.module.scss";
+import Popup from "../Popup/Popup";
 
 export const Days = () => {
+  const [popupActive, setPopupActive] = useState(false);
+
   const weather = useSelector((state) => state.weatherSlice.weather);
   const day = weather.forecast.forecastday;
+
   const days = day.map((day) => ({
     dayId: day.date,
     dayCard: dayjs(day.date).locale("ru").format("D  MMM"),
@@ -17,25 +20,38 @@ export const Days = () => {
     tempNight: Math.floor(day.day.mintemp_c),
     info: day.day.condition.text,
   }));
+  const [idDay, setIdDay] = useState(days[0]?.dayId);
 
   return (
     <>
       {/*<Tabs />*/}
       <div className={s.card_day}>
         {days.map((day) => (
-          <NavLink to={`/Info/${day.dayId}`} key={day.dayId}>
-            <div className={s.card}>
-              <div className={s.day_card}>{day.dayCard}</div>
-              <div className={s.icon_id}>
-                <img src={day.iconId} alt="" />
-              </div>
-              <div className={s.temp_day}>{day.tempDay}</div>
-              <div className={s.temp_night}>{day.tempNight}</div>
-              <div className={s.info}>{day.info}</div>
+          <div
+            className={s.card}
+            key={day.dayId}
+            onClick={() => {
+              setPopupActive(true);
+              setIdDay(day.dayId);
+            }}
+          >
+            <div className={s.day_card}>{day.dayCard}</div>
+            <div className={s.icon_id}>
+              <img src={day.iconId} alt="" />
             </div>
-          </NavLink>
+            <div className={s.temp_day}>{day.tempDay}</div>
+            <div className={s.temp_night}>{day.tempNight}</div>
+            <div className={s.info}>{day.info}</div>
+          </div>
         ))}
       </div>
+      {idDay && (
+        <Popup
+          active={popupActive}
+          setActive={setPopupActive}
+          dayCard={idDay}
+        />
+      )}
     </>
   );
 };

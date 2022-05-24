@@ -1,5 +1,12 @@
 @import "../../styles/variables";
 
+.popupNon {
+  transform: scale(0);
+}
+.popupNon.active {
+  transform: scale(1);
+}
+
 .popup {
   position: absolute;
   top: 50%;
@@ -18,8 +25,10 @@
 .blur {
   position: absolute;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

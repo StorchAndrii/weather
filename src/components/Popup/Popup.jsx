@@ -1,14 +1,12 @@
 import React from "react";
 import dayjs from "dayjs";
-import { NavLink, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import s from "./Popup.module.scss";
 import { GlobalSvgSelector } from "../../assets/icon/globalSvg/GlobalSvgSelector";
 import ThisDayItem from "../ThisDayItem/ThisDayItem";
 
-const Popup = () => {
-  const { dayCard } = useParams();
+const Popup = ({ active, setActive, dayCard }) => {
   const weather = useSelector((state) => state.weatherSlice.weather);
   const dayArray = weather.forecast.forecastday;
   const dayInfo = dayArray.find((dayInfo) => dayInfo.date === dayCard);
@@ -39,8 +37,8 @@ const Popup = () => {
   ];
 
   return (
-    <>
-      <div className={s.blur} />
+    <div className={active ? s.active : s.popupNon}>
+      <div className={s.blur} onClick={() => setActive(false)} />
       <div className={s.popup}>
         <div className={s.day}>
           <div className={s.day_temp}>{Math.floor(dayInfo.day.maxtemp_c)}°</div>
@@ -61,13 +59,11 @@ const Popup = () => {
             <ThisDayItem key={item.iconId} item={item} />
           ))}
         </div>
-        <NavLink to={"/"}>
-          <div className={s.close}>
-            <GlobalSvgSelector id="close" />
-          </div>
-        </NavLink>
+        <div className={s.close} onClick={() => setActive(false)}>
+          <GlobalSvgSelector id="close" />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
