@@ -45,13 +45,15 @@ export const Days = () => {
           </div>
         ))}
       </div>
-      {idDay && (
-        <Popup
-          active={popupActive}
-          setActive={setPopupActive}
-          dayCard={idDay}
-        />
-      )}
+      <div className={s.popup}>
+        {idDay && (
+          <Popup
+            active={popupActive}
+            setActive={setPopupActive}
+            dayCard={idDay}
+          />
+        )}
+      </div>
     </>
   );
 };

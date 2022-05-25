@@ -20,7 +20,9 @@ const Home = () => {
           <ThisDay />
           <ThisDayInfo />
         </div>
-        <Days />
+        <div className={s.days}>
+          <Days />
+        </div>
       </div>
     </>
   );

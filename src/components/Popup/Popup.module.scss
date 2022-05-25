@@ -10,12 +10,13 @@
 .popup {
   position: absolute;
   top: 50%;
-  left: calc(50% - 325px);
+  left: calc(50% - 165px);
   z-index: 1001;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 750px;
+  min-width: 650px;
   width: 100%;
   padding: 40px;
   background: var(#{--components-background-default});
@@ -23,6 +24,9 @@
   border-radius: $border-radius;
 }
 .blur {
+  display: flex;
+  cursor: pointer;
+  flex-wrap: wrap;
   position: absolute;
   z-index: 1000;
   width: 100vw;
