@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getWeather("Киев"));
   }, [dispatch]);
-
+  console.log("hello");
   return (
     <>
       <div className={s.home}>
